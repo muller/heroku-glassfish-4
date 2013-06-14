@@ -1,0 +1,22 @@
+apply plugin: 'war'
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'glassfish4'
+applicationName = 'heroku-glassfish-4'
+
+repositories {
+	mavenCentral()
+	mavenRepo url: 'https://maven.java.net/content/groups/promoted/'
+}
+
+dependencies {
+
+	groovy 	'org.codehaus.groovy:groovy-all:2.1.1'
+
+	compile 'org.glassfish.main.extras:glassfish-embedded-all:4.0'
+	compile 'org.codehaus.groovy:groovy-all:2.1.1'
+	compile 'javax:javaee-api:7.0'
+}
+
+task stage(dependsOn: ['clean', 'installApp'])
