@@ -23,14 +23,3 @@ war.addClassPath(file)
 println "### Deploy archive ${file}"
 
 glassfish.deployer.deploy(war.toURI(), '--contextroot=/')
-
-println '### Test api'
-
-def client = client = ClientBuilder.newClient()
-def target = client.target("http://localhost:${port}/api/hello/glassfish");
-def response = target.request('application/json').get()
-
-//assert response.status == 200
-
-//glassfish.dispose()
-//glassfish.stop()	

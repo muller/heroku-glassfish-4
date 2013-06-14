@@ -14,9 +14,8 @@ dependencies {
 
 	groovy 	'org.codehaus.groovy:groovy-all:2.1.1'
 
-	compile 'org.glassfish.main.extras:glassfish-embedded-all:4.0'
-	compile 'org.codehaus.groovy:groovy-all:2.1.1'
 	compile 'javax:javaee-api:7.0'
+	compile 'org.glassfish.main.extras:glassfish-embedded-all:4.0'
 }
 
 task stage(dependsOn: ['clean', 'installApp'])
